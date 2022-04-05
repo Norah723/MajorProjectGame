@@ -1,0 +1,129 @@
+body{
+    /*background-color: rgba(251, 215, 203, 0.53);*/
+    background-image: url("../images/Background 2.jpg");
+    background-size: cover;
+    background-position-x: 10%;
+}
+
+h1{
+    color: rgba(251, 215, 203, 0.603);
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2{
+    color:rgb(251, 215, 203, 0.603);
+    text-align: center;
+}
+
+h3{
+    color: rgba(251, 215, 203, 0.603);
+    text-align: center;
+    border-color: #fff;
+}
+
+p{
+    color: rgb(68, 44, 46);
+    text-align: center;
+}
+
+.timer{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    background-color: rgba(251, 215, 203, 0.53);
+    border: 3px solid #fff;
+    color: #fff;
+    text-align: center;
+}
+.currency{
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    background-color: rgba(251, 215, 203);
+    /*background-color: rgb(160, 137, 138);*/
+    border: 3px solid #fff;
+    color: rgb(68, 44, 46);
+    text-align: center;
+}
+
+.objects img{
+    width: 205px;
+    height: 195px;
+    background-size: cover;
+}
+
+#btnUmbrella{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/Umbrella 2.png");
+    background-size: contain;
+    margin: 27px;
+    border-radius: 10px;
+}
+
+#btnRouge{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/Rouge 1.png");
+    background-size: contain;
+    margin: 27px;
+    border-radius: 10px;
+}
+
+#btnJewellery{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/Jewellery 4.png");
+    background-size: contain;
+    margin: 27px;
+    border-radius: 10px;
+}
+
+#btnDessert{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/Dessert 3.png");
+    background-size: contain;
+    margin: 27px;
+    border-radius: 10px;
+}
+
+#btnRice{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/Rice 1.png");
+    background-size: contain;
+    margin: 27px;
+    border-radius: 10px;
+}
+
+#btnPurchase{
+    width: 100px;
+    height: 50px;
+    background-color: rgba(251, 215, 203);
+    border-radius: 5px;
+    float:right;
+    /*right: 0px;
+    bottom: 0px;*/
+    margin: 5px;
+    /*position: absolute;*/
+}
+
+#btnSell{
+    width: 100px;
+    height: 50px;
+    background-color: rgba(251, 215, 203);
+    border-radius: 5px;
+    float: right;
+    /*right: 0px;
+    bottom: 0px;*/
+    margin: 5px;
+    /*position: absolute;*/
+}
