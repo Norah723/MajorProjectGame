@@ -6,6 +6,7 @@ var initialCurrency = 100000;
 var stock = '';
 var itemClicked = -1;
 
+//Background information
 $(document).ready(function () {
   // Get value on button click and show alert
   $("#myBtn").click(function () {
@@ -17,8 +18,9 @@ $(document).ready(function () {
 });
 
 document.getElementById('timer').innerHTML =
-  05 + ":" + 00;
+  00 + ":" + 10;
 
+// Start the timer that appears in the top right
 function startTimer() {
   var presentTime = document.getElementById('timer').innerHTML;
   var timeArray = presentTime.split(/[:]+/);
@@ -44,6 +46,7 @@ function checkSecond(sec) {
 
 // If the count down is over, write some text 
 if (sec = 0) {
+  //location.href = 'database.html';
   clearInterval(x);
   document.getElementById("timer").innerHTML = "EXPIRED";
 }
@@ -64,8 +67,6 @@ var numbersUsed = '';
 var price = 1005;
 console.log('Price: ' + price);
 
-//var arrNumberUsed = 
-
 function displayObject() {
   //loop over array
   var successfulCount = 0;
@@ -83,12 +84,14 @@ function displayObject() {
       numbersUsed = numbersUsed + rndNo.toString();
       successfulCount++
       // var price = Math.floor(Math.random() * (arrObjects[rndNo].max - arrObjects[rndNo].min + 1) + arrObjects[rndNo].min);
-      //var price = 1000;
       console.log('Price = ' + price);
       var numberOf = arrObjects[rndNo].amount;
       var numberOf2 = arrObjects[rndNo].inStockAmount;
+      //display 3 random object images
       var displayHTML = '';
+      //display the amount of object
       var displayHTML1 = '';
+      //display the amount of object in stock (ie. how much the user have)
       var displayHTML2 = '';
       displayHTML += "<div id='image" + rndNo + "' class='objects'>";
       displayHTML += "<img src='" + arrObjects[rndNo].img + "'>"
@@ -110,7 +113,7 @@ function displayObject() {
 
   }
   numbersUsed = numbersUsed + rndNo.toString();
-  console.log('Numbers Used' + numbersUsed);
+  console.log('Numbers Used ' + numbersUsed);
 }
 
 displayObject();
@@ -154,7 +157,9 @@ $(document).on('click', '#btnPurchase', function () {
   $("#information").empty();
   amountAfterPurchase = numberOf3 - numberOf3;
   inStockAmountAfterPurchase = numberOf4 + numberOf3;
+  //update the amount of object
   var displayHTML3 = '';
+  //update the amount of object in stock (ie. how much the user have)
   var displayHTML4 = '';
   displayHTML3 += "<div class='numberOf>' > Numbers of " + itemClicked.name + " available = ";
   displayHTML3 += amountAfterPurchase;
@@ -165,8 +170,6 @@ $(document).on('click', '#btnPurchase', function () {
   $('#information').append(displayHTML3, displayHTML4);
   console.log(displayHTML3);
   console.log(displayHTML4);
-  /*var afterCurrency = inStockAmountAfterPurchase * price;
-  console.log(afterCurrency + 'AAAAAAA');*/
 });
 
 $(document).on('click', '#btnSell', function () {
@@ -199,6 +202,11 @@ $(document).on('click', '#btnSell', function () {
   $('#information').append(displayHTML3, displayHTML4);
   console.log(displayHTML3);
   console.log(displayHTML4);
+});
+
+//access to new html
+$('#btnFinish').click(function(){
+  location.href = 'database.html';
 });
 
 //DataBase Function

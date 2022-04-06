@@ -105,7 +105,7 @@ p{
 }
 
 #btnPurchase{
-    width: 100px;
+    width: 90px;
     height: 50px;
     background-color: rgba(251, 215, 203);
     border-radius: 5px;
@@ -117,7 +117,19 @@ p{
 }
 
 #btnSell{
-    width: 100px;
+    width: 90px;
+    height: 50px;
+    background-color: rgba(251, 215, 203);
+    border-radius: 5px;
+    float: right;
+    /*right: 0px;
+    bottom: 0px;*/
+    margin: 5px;
+    /*position: absolute;*/
+}
+
+#btnFinish{
+    width: 90px;
     height: 50px;
     background-color: rgba(251, 215, 203);
     border-radius: 5px;
