@@ -3,7 +3,6 @@ var apikey = '624509df67937c128d7c9335';
 var url = 'https://majorproject-8602.restdb.io/rest/majorproject';
 
 var initialCurrency = 100000;
-var stock = '';
 var itemClicked = -1;
 
 //Background information
@@ -18,7 +17,7 @@ $(document).ready(function () {
 });
 
 document.getElementById('timer').innerHTML =
-  00 + ":" + 10;
+  05 + ":" + 00;
 
 // Start the timer that appears in the top right
 function startTimer() {
@@ -59,13 +58,10 @@ var arrObjects = [
   { name: 'Rice', img: 'images/Rice 1.png', value: 5, min: 350, max: 991, amount: 100, inStockAmount: 0 }
 ];
 
-var arrRndNo = [];
-
 var rndNo = 0;
 var numbersUsed = '';
-//var price = Math.floor(Math.random() * (arrObjects[rndNo].max - arrObjects[rndNo].min + 1) + arrObjects[rndNo].min);
-var price = 1005;
-console.log('Price: ' + price);
+//fixed price for now to make the code work
+var price = 5005;
 
 function displayObject() {
   //loop over array
@@ -81,9 +77,9 @@ function displayObject() {
     console.log('numbersUsed - ' + numbersUsed);
     console.log(numbersUsed.indexOf(rndNo.toString()));
     if (numbersUsed.indexOf(rndNo.toString()) == -1) {
+      //price = Math.floor(Math.random() * (arrObjects[rndNo].max - arrObjects[rndNo].min + 1) + arrObjects[rndNo].min);
       numbersUsed = numbersUsed + rndNo.toString();
       successfulCount++
-      // var price = Math.floor(Math.random() * (arrObjects[rndNo].max - arrObjects[rndNo].min + 1) + arrObjects[rndNo].min);
       console.log('Price = ' + price);
       var numberOf = arrObjects[rndNo].amount;
       var numberOf2 = arrObjects[rndNo].inStockAmount;
@@ -139,9 +135,6 @@ $(document).on('click', '#btnRice', function () {
   itemClicked = arrObjects[4]
 });
 
-//var numberOf3 = itemClicked.amount;
-//var numberOf4 = itemClicked.inStockAmount;
-
 $(document).on('click', '#btnPurchase', function () {
   //subtract arrObjects[rndNo].amount * price from the initialCurrency
   var purchaseAmount = itemClicked.amount * price;
@@ -186,8 +179,8 @@ $(document).on('click', '#btnSell', function () {
   //subtract arrObjects[rndNo].amount from arrObjects[rndNo].inStockAmount &
   //add arrObjects[rndNo].amount to arrObjects[rndNo].amount 
   $("#information").empty();
-  amountAfterSell = numberOf3 + numberOf3;
-  inStockAmountAfterSell = numberOf4 - numberOf3;
+  amountAfterSell = numberOf3;
+  inStockAmountAfterSell = numberOf4;
   console.log('Amount After Sell = ' + amountAfterSell);
   console.log('Number Of 3 = ' + numberOf3 + ' ' + itemClicked.name);
   console.log('Number Of 4 = ' + numberOf4 + ' ' + itemClicked.name);
@@ -205,12 +198,12 @@ $(document).on('click', '#btnSell', function () {
 });
 
 //access to new html
-$('#btnFinish').click(function(){
+$('#btnFinish').click(function () {
   location.href = 'database.html';
 });
 
 //DataBase Function
-/*function addPurchaseInformation(item, url, apikey) {
+function addPurchaseInformation(item, url, apikey) {
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -230,20 +223,20 @@ $('#btnFinish').click(function(){
     console.log(response);
   });
 
-}*/
+}
 
-/* --- Event Handlers --- */
+// --- Event Handlers --- 
 
-/*$('#btnPurchase').click(function () {
+$('#btnPurchase').click(function () {
   console.log('submitted');
   var tempItem = {
-    "Name": arrObjects[rndNo].name,
-    "Object": arrObjects[rndNo].img,
-    "AmountPurchased": arrObjects[rndNo].amount, 
+    "Name": itemClicked.name,
+    "Object": itemClicked.img,
+    "AmountPurchased": itemClicked.amount, 
     "PriceEach": price
   };
   addPurchaseInformation(tempItem, url, apikey);
-});*/
+});
 
 /* --- Code to run at start --- */
 
